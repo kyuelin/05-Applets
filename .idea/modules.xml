@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/00-ColorMatcher/00-ColorMatcher.iml" filepath="$PROJECT_DIR$/00-ColorMatcher/00-ColorMatcher.iml" />
+      <module fileurl="file://$PROJECT_DIR$/02-AnAppletSubclass/02-AnAppletSubclass.iml" filepath="$PROJECT_DIR$/02-AnAppletSubclass/02-AnAppletSubclass.iml" />
+      <module fileurl="file://$PROJECT_DIR$/03-AnAppletWithGraphics/03-AnAppletWithGraphics.iml" filepath="$PROJECT_DIR$/03-AnAppletWithGraphics/03-AnAppletWithGraphics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/04-AnAppletWithParameters/04-AnAppletWithParameters.iml" filepath="$PROJECT_DIR$/04-AnAppletWithParameters/04-AnAppletWithParameters.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-AnAppletWithButtons/05-AnAppletWithButtons.iml" filepath="$PROJECT_DIR$/05-AnAppletWithButtons/05-AnAppletWithButtons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/05-Applets.iml" filepath="$PROJECT_DIR$/05-Applets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/06-AnAppletWithTextFields/06-AnAppletWithTextFields.iml" filepath="$PROJECT_DIR$/06-AnAppletWithTextFields/06-AnAppletWithTextFields.iml" />
+      <module fileurl="file://$PROJECT_DIR$/07-AnAppletWithLayout/07-AnAppletWithLayout.iml" filepath="$PROJECT_DIR$/07-AnAppletWithLayout/07-AnAppletWithLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/08-AnAppletWithPanels/08-AnAppletWithPanels.iml" filepath="$PROJECT_DIR$/08-AnAppletWithPanels/08-AnAppletWithPanels.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09-AnAppletWithACanvas/09-AnAppletWithACanvas.iml" filepath="$PROJECT_DIR$/09-AnAppletWithACanvas/09-AnAppletWithACanvas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10-AnAppletWithAScrollbar/10-AnAppletWithAScrollbar.iml" filepath="$PROJECT_DIR$/10-AnAppletWithAScrollbar/10-AnAppletWithAScrollbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/11-ASimplePaintApplet/11-ASimplePaintApplet.iml" filepath="$PROJECT_DIR$/11-ASimplePaintApplet/11-ASimplePaintApplet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/12-AnAppletWithMouseEvents/12-AnAppletWithMouseEvents.iml" filepath="$PROJECT_DIR$/12-AnAppletWithMouseEvents/12-AnAppletWithMouseEvents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/13-AnAppletWithMouseMotionEvents/13-AnAppletWithMouseMotionEvents.iml" filepath="$PROJECT_DIR$/13-AnAppletWithMouseMotionEvents/13-AnAppletWithMouseMotionEvents.iml" />
+    </modules>
+  </component>
+</project>
