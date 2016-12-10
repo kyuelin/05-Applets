@@ -1,27 +1,22 @@
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class CircleCanvas extends Canvas implements ActionListener {
-	CircleCanvas(Button larger, Button smaller, Button up, Button down, Button left, Button right) {
+public class CircleCanvasSimple extends Canvas {
+	CircleCanvasSimple(Button larger, Button smaller, Button up, Button down, Button left, Button right) {
 
 		this.larger = larger;
-		larger.addActionListener(this);
 
 		this.smaller = smaller;
-		smaller.addActionListener(this);
 
 		this.up = up;
-		up.addActionListener(this);
 
 		this.down = down;
-		down.addActionListener(this);
 
 		this.left = left;
-		left.addActionListener(this);
 
 		this.right = right;
-		right.addActionListener(this);
 
 		setSize(100, 100);
 
