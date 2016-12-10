@@ -1,30 +1,50 @@
+import javax.swing.border.Border;
 import java.applet.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AnAppletWithPanels extends Applet {
-	public void init() {
-		setLayout(new BorderLayout());
+public class AnAppletWithPanels extends Applet implements ActionListener {
+    public void init() {
+        setLayout(new BorderLayout());
 
-		Panel p1 = new Panel();
-		p1.setBackground(Color.blue);
-		p1.add(new Button("1"));
-		p1.add(new Button("2"));
-		p1.add(new Button("3"));
-		add(p1, BorderLayout.NORTH);
+        Panel top = new Panel();
+        top.setBackground(Color.green);
+        display = new TextField(30);
+        display.setEditable(false);
+        display.addActionListener(this);
+        top.add(display, BorderLayout.EAST);
+        add(top, BorderLayout.NORTH);
 
-		Panel p2 = new Panel();
-		p2.setBackground(Color.yellow);
-		p2.add(new Button("4"));
-		add(p2, BorderLayout.EAST);
+        Panel bottom = new Panel();
+        bottom.setBackground(Color.red);
+        bottom.setLayout(new GridLayout(4, 3));
 
-		Panel p3 = new Panel();
-		p3.setBackground(Color.green);
-		p3.setLayout(new GridLayout(2, 0));		// 2 rows, variable columns
-		p3.add(new Button("5"));
-		p3.add(new Button("6"));
-		p3.add(new Button("7"));
-		p3.add(new Button("8"));
-		p3.add(new Button("9"));
-		add(p3, BorderLayout.CENTER);
-	}
+        for (int i = 1; i <= 9; i++) {
+            buttons[i] = new Button(String.valueOf(i));
+            bottom.add(buttons[i]);
+        }
+        buttons[10] = new Button("*");
+        bottom.add(buttons[10]);
+        buttons[0] = new Button("0");
+        bottom.add(buttons[0]);
+        buttons[11] = new Button("#");
+        bottom.add(buttons[11]);
+        add(bottom, BorderLayout.CENTER);
+
+
+        for (int i = 0; i < 12; i++) {
+            buttons[i].addActionListener(this);
+        }
+    }
+
+    Button[] buttons = new Button[12];
+    TextField display;
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Button pressed = (Button) e.getSource();
+        display.setText(display.getText() + pressed.getLabel());
+        //System.out.println(display.getText());
+    }
 }

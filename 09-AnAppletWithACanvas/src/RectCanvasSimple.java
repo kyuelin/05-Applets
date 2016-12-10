@@ -1,27 +1,22 @@
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
-public class CircleCanvas extends Canvas implements ActionListener {
-	CircleCanvas(Button larger, Button smaller, Button up, Button down, Button left, Button right) {
+public class RectCanvasSimple extends Canvas implements ActionListener {
+	RectCanvasSimple(Button larger, Button smaller, Button up, Button down, Button left, Button right) {
 
 		this.larger = larger;
-		larger.addActionListener(this);
 
 		this.smaller = smaller;
-		smaller.addActionListener(this);
 
 		this.up = up;
-		up.addActionListener(this);
 
 		this.down = down;
-		down.addActionListener(this);
 
 		this.left = left;
-		left.addActionListener(this);
 
 		this.right = right;
-		right.addActionListener(this);
 
 		setSize(100, 100);
 
@@ -30,14 +25,18 @@ public class CircleCanvas extends Canvas implements ActionListener {
 
 	public void paint(Graphics g) {
 		g.setColor(Color.blue);
-		g.drawOval(upperLeftX, upperLeftY, diameter, diameter);
+		g.drawRect(upperLeftX, upperLeftY, width, height);
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == larger)
-			diameter++;
-		else if (e.getSource() == smaller)
-			diameter--;
+		if (e.getSource() == larger) {
+			height++;
+			width++;
+		}
+		else if (e.getSource() == smaller) {
+			width--;
+			height--;
+		}
 		else if (e.getSource() == up)
 			upperLeftY--;
 		else if (e.getSource() == down)
@@ -54,5 +53,6 @@ public class CircleCanvas extends Canvas implements ActionListener {
 	int 
 		upperLeftX = 10, 
 		upperLeftY = 20, 
-		diameter = 10;
+		width = 10,
+		height = 20;
 }
