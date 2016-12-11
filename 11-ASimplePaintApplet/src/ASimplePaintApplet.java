@@ -7,24 +7,25 @@ public class ASimplePaintApplet extends Applet {
 		Scrollbar lengthAdjuster = new Scrollbar(Scrollbar.HORIZONTAL, 30, 0, 0, 100);
 		TextField lengthDisplay = new TextField(3);
 		lengthDisplay.setEditable(false);
-		TextField thicknessDisplay = new TextField(3);
-		thicknessDisplay.setEditable(false);
-		Button thicker = new Button("Thicker");
-		Button thinner = new Button("Thinner");
-		Button lucky = new Button("Feeling Lucky?");
-		PaintCanvas paintCanvas = new PaintCanvas(lengthAdjuster, thicker, thinner, lucky,
-									lengthDisplay, thicknessDisplay);
 
+		Scrollbar thicknessAdjuster = new Scrollbar(Scrollbar.VERTICAL, 30, 0, 0, 100);
+		Button lucky = new Button("Feeling Lucky?");
+		TextField thicknessDisplay = new TextField(3);
+		lengthDisplay.setEditable(false);
+
+		PaintCanvas paintCanvas = new PaintCanvas(lengthAdjuster, thicknessAdjuster, lucky,
+									lengthDisplay, thicknessDisplay);
 
 		setLayout(new BorderLayout());
 
 		add(paintCanvas, BorderLayout.CENTER);
 
 		Panel buttonPanel = new Panel();
-		buttonPanel.setLayout(new GridLayout(0, 1));
-		buttonPanel.add(thinner);
+
+
+		//buttonPanel.setLayout(new GridLayout(0, 1));
+		buttonPanel.add(thicknessAdjuster);
 		buttonPanel.add(thicknessDisplay);
-		buttonPanel.add(thicker);
 		buttonPanel.add(lucky);
 
 		add(buttonPanel, BorderLayout.EAST);

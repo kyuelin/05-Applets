@@ -3,20 +3,18 @@ import java.awt.event.*;
 import java.util.*;
 
 class PaintCanvas extends Canvas implements ActionListener, AdjustmentListener {
-	PaintCanvas(Scrollbar lengthAdjuster, Button thicker, Button thinner, Button lucky,
+	PaintCanvas(Scrollbar lengthAdjuster, Scrollbar thicknessAdjuster, Button lucky,
 					TextField lengthDisplay, TextField thicknessDisplay) {
 
 		this.lengthAdjuster = lengthAdjuster;
-		this.thicker = thicker;
-		this.thinner = thinner;
+		this.thicknessAdjuster = thicknessAdjuster;
 		this.lucky = lucky;
 		this.lengthDisplay = lengthDisplay;
 		this.thicknessDisplay = thicknessDisplay;
 
 		lengthAdjuster.addAdjustmentListener(this);
-		thicker.addActionListener(this);		
-		thinner.addActionListener(this);		
-		lucky.addActionListener(this);		
+		thicknessAdjuster.addAdjustmentListener(this);
+		lucky.addActionListener(this);
 
 		setSize(200, 200);
 
@@ -31,14 +29,11 @@ class PaintCanvas extends Canvas implements ActionListener, AdjustmentListener {
 		setBackground(new Color(15, 150, 200));
 	}
 
-	private void makeThicker() {
-		thickness += 1;
-		thicknessDisplay.setText(thickness+"");
-		repaint();
-	}
-
-	private void makeThinner() {
-		thickness -= 1;
+	private void adjustThickness(int newThickness) {
+		thickness = newThickness;
+		if (thickness >=50 ) {
+		    thickness = 50;
+        }
 		thicknessDisplay.setText(thickness+"");
 		repaint();
 	}
@@ -56,22 +51,24 @@ class PaintCanvas extends Canvas implements ActionListener, AdjustmentListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == thicker)
-			makeThicker();
-		else if (e.getSource() == thinner)
-			makeThinner();
-		else
 			makeRandomThickness();
 	}
 
 	public void adjustmentValueChanged(AdjustmentEvent e) {
-		length = lengthAdjuster.getValue();				// Only one scrollbar, no need for getSource() invocation
-		lengthDisplay.setText(length+"");
+		if (e.getSource() == lengthAdjuster) {
+			length = lengthAdjuster.getValue();				// Only one scrollbar, no need for getSource() invocation
+			lengthDisplay.setText(length+"");
+		}
+		else if (e.getSource() == thicknessAdjuster) {
+			adjustThickness(thicknessAdjuster.getValue());
+		}
+
 		repaint();
 	}
 
 	Scrollbar 
-		lengthAdjuster;
+		lengthAdjuster,
+			thicknessAdjuster;
 
 	TextField
 		lengthDisplay,
@@ -84,8 +81,6 @@ class PaintCanvas extends Canvas implements ActionListener, AdjustmentListener {
 		thickness = 1;
 
 	Button 
-		thicker,
-		thinner,
 		lucky;
 
 
