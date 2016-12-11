@@ -9,6 +9,7 @@ public class AnAppletWithScrollbar extends Applet implements AdjustmentListener 
 		scrollbar.addAdjustmentListener(this);
 		textField = new TextField(3);
 		textField.setEditable(false);
+		textField.setText(scrollbar.getValue()+"");
 		add(textField);
 	}
 
